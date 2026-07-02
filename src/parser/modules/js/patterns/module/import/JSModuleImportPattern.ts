@@ -1,14 +1,14 @@
-import AbstractParserPattern from "../../../../../abstracts/AbstractParserPattern";
-import JSModuleImportFromKeywordToken from "../../../tokens/module/import/from/keyword/JSModuleImportFromKeywordToken";
-import JSModuleImportKeywordToken from "../../../tokens/module/import/keyword/JSModuleImportKeywordToken";
 import JSDataStringPattern from "../../data/string/JSDataStringPattern";
+import AbstractParserPattern from "../../../../../abstracts/AbstractParserPattern";
 import JSModuleImportIdentifiersPattern from "./identifiers/JSModuleImportIdentifiersPattern";
+import JSModuleFromKeywordToken from "../../../tokens/module/from/keyword/JSModuleFromKeywordToken";
+import JSModuleImportKeywordToken from "../../../tokens/module/import/keyword/JSModuleImportKeywordToken";
 
 export default class JSModuleImportPattern extends AbstractParserPattern
 {
     keyword = undefined as JSModuleImportKeywordToken | undefined;
     identifiers = undefined as JSModuleImportIdentifiersPattern | undefined;
-    from = undefined as JSModuleImportFromKeywordToken | undefined;
+    from = undefined as JSModuleFromKeywordToken | undefined;
     source = undefined as JSDataStringPattern | undefined;
 
 
@@ -37,7 +37,7 @@ export default class JSModuleImportPattern extends AbstractParserPattern
         }, {
             name: 'from',
             required: true,
-            element: JSModuleImportFromKeywordToken,
+            element: JSModuleFromKeywordToken,
         }, {
             skip: /[\s]/,
             required: false,

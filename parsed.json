@@ -3,91 +3,66 @@
     {
       "children": [
         {
+          "name": {
+            "lexeme": "fn"
+          },
           "keyword": {
-            "lexeme": "import"
+            "lexeme": "const"
           },
-          "identifiers": {
-            "openingQuote": {
-              "lexeme": "{"
-            },
-            "values": [
-              {
-                "identifier": {
-                  "lexeme": "lol"
-                }
-              }
-            ],
-            "closingQuote": {
-              "lexeme": "}"
-            }
+          "operator": {
+            "lexeme": "="
           },
-          "from": {
-            "lexeme": "from"
-          },
-          "source": {
-            "value": {
-              "lexeme": "kek"
-            },
-            "openingQuote": {
-              "lexeme": "'"
-            },
-            "closingQuote": {
-              "lexeme": "'"
-            }
-          }
-        },
-        {
-          "keyword": {
-            "lexeme": "while"
-          },
-          "condition": {
-            "openingQuote": {
-              "lexeme": "("
-            },
-            "expression": {
-              "left": {
-                "data": {
-                  "value": {
-                    "lexeme": "true"
-                  }
-                }
-              }
-            },
-            "closingQuote": {
-              "lexeme": ")"
-            }
-          },
-          "body": {
-            "openingQuote": {
-              "lexeme": "{"
-            },
-            "instructions": [
-              {
-                "left": {
-                  "data": {
-                    "integer": {
-                      "lexeme": "2"
+          "expression": {
+            "left": {
+              "arguments": {
+                "openingQuote": {
+                  "lexeme": "("
+                },
+                "values": [
+                  {
+                    "identifier": {
+                      "lexeme": "number"
                     }
                   }
+                ],
+                "closingQuote": {
+                  "lexeme": ")"
+                }
+              },
+              "keyword": {
+                "lexeme": "=>"
+              },
+              "body": {
+                "openingQuote": {
+                  "lexeme": "{"
                 },
-                "operator": {
-                  "operator": {
-                    "lexeme": "+"
-                  }
-                },
-                "right": {
-                  "left": {
-                    "data": {
-                      "integer": {
-                        "lexeme": "3"
+                "instructions": [
+                  {
+                    "left": {
+                      "identifier": {
+                        "lexeme": "number"
+                      }
+                    },
+                    "operator": {
+                      "operator": {
+                        "lexeme": "*"
+                      }
+                    },
+                    "right": {
+                      "left": {
+                        "data": {
+                          "integer": {
+                            "lexeme": "4"
+                          }
+                        }
                       }
                     }
                   }
+                ],
+                "closingQuote": {
+                  "lexeme": "}"
                 }
               }
-            ],
-            "closingQuote": {
-              "lexeme": "}"
             }
           }
         }

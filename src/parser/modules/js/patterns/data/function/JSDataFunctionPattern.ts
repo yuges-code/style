@@ -28,7 +28,7 @@ export default class JSDataFunctionPattern extends AbstractParserPattern
             required: true,
         }, {
             name: 'identifier',
-            required: true,
+            required: false,
             element: JSVariableNameToken,
         }, {
             skip: /[\s]/,

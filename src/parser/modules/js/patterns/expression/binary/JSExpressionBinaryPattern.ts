@@ -2,6 +2,7 @@ import JSVariablePattern from "../../variable/JSVariablePattern";
 import JSExpressionUnaryPattern from "../unary/JSExpressionUnaryPattern";
 import AbstractParserPattern from "../../../../../abstracts/AbstractParserPattern";
 import JSOperatorBinaryPattern from "../../operator/binary/JSOperatorBinaryPattern";
+import JSDataFunctionArrowPattern from "../../data/function/arrow/JSDataFunctionArrowPattern";
 import JSExpressionOpeningQuoteToken from "../../../tokens/expression/quote/JSExpressionOpeningQuoteToken";
 import JSExpressionClosingQuoteToken from "../../../tokens/expression/quote/JSExpressionClosingQuoteToken";
 
@@ -9,7 +10,7 @@ export default class JSExpressionBinaryPattern extends AbstractParserPattern
 {
     openingQuote = undefined as JSExpressionOpeningQuoteToken | undefined;
     expression = undefined as JSExpressionBinaryPattern | undefined;
-    left = undefined as JSVariablePattern | JSExpressionUnaryPattern | undefined;
+    left = undefined as JSVariablePattern | JSExpressionUnaryPattern | JSDataFunctionArrowPattern | undefined;
     operator = undefined as JSOperatorBinaryPattern | undefined;
     right = undefined as JSExpressionBinaryPattern | undefined;
     closingQuote = undefined as JSExpressionClosingQuoteToken | undefined;
@@ -25,6 +26,10 @@ export default class JSExpressionBinaryPattern extends AbstractParserPattern
 
     pattern = () => [
         {
+            name: 'left',
+            required: false,
+            element: JSDataFunctionArrowPattern,
+        },{
             name: 'openingQuote',
             required: false,
             element: JSExpressionOpeningQuoteToken,
@@ -44,7 +49,7 @@ export default class JSExpressionBinaryPattern extends AbstractParserPattern
         }, {
             name: 'left',
             required: false,
-            disabled: () => this.expression != undefined,
+            disabled: () => this.expression != undefined || this.left != undefined,
             element: JSExpressionUnaryPattern,
         }, {
             name: 'left',

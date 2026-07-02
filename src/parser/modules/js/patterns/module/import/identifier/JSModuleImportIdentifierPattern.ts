@@ -1,17 +1,20 @@
 import AbstractParserPattern from "../../../../../../abstracts/AbstractParserPattern";
 import JSVariableNameToken from "../../../../tokens/variable/name/JSVariableNameToken";
 import JSOperatorCommaToken from "../../../../tokens/operator/comma/JSOperatorCommaToken";
-import JSModuleImportAsKeywordToken from "../../../../tokens/module/import/as/keyword/JSModuleImportAsKeywordToken";
+import JSModuleAsKeywordToken from "../../../../tokens/module/as/keyword/JSModuleAsKeywordToken";
+import JSModuleAllKeywordToken from "../../../../tokens/module/all/keyword/JSModuleAllKeywordToken";
 
 export default class JSModuleImportIdentifierPattern extends AbstractParserPattern
 {
     identifier = undefined as JSVariableNameToken | undefined;
-    as = undefined as JSModuleImportAsKeywordToken | undefined;
+    all = undefined as JSModuleAllKeywordToken | undefined;
+    as = undefined as JSModuleAsKeywordToken | undefined;
     alias = undefined as JSVariableNameToken | undefined;
     operator = undefined as JSOperatorCommaToken | undefined;
 
     properties = () => [
         'identifier',
+        'all',
         'as',
         'alias',
         'operator',
@@ -20,15 +23,20 @@ export default class JSModuleImportIdentifierPattern extends AbstractParserPatte
     pattern = () => [
         {
             name: 'identifier',
-            required: true,
+            required: false,
             element: JSVariableNameToken,
+        }, {
+            name: 'all',
+            required: () => this.identifier === undefined,
+            disabled: () => this.identifier != undefined,
+            element: JSModuleAllKeywordToken,
         }, {
             skip: /[\s]/,
             required: false,
         }, {
             name: 'as',
-            required: false,
-            element: JSModuleImportAsKeywordToken,
+            required: () => this.all != undefined,
+            element: JSModuleAsKeywordToken,
         }, {
             skip: /[\s]/,
             required: false,

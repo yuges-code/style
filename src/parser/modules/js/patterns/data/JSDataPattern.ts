@@ -19,6 +19,7 @@ export default class JSDataPattern extends AbstractParserPattern
         JSDataUndefinedPattern,
         JSDataObjectPattern,
         JSDataFunctionPattern,
+
         // Class
     ];
 };

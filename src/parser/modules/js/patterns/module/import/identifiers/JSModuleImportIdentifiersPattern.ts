@@ -1,4 +1,5 @@
 import AbstractParserPattern from "../../../../../../abstracts/AbstractParserPattern";
+import JSModuleImportIdentifierPattern from "../identifier/JSModuleImportIdentifierPattern";
 import JSDataObjectOpeningQuoteToken from "../../../../tokens/data/object/quote/JSDataObjectOpeningQuoteToken";
 import JSDataObjectClosingQuoteToken from "../../../../tokens/data/object/quote/JSDataObjectClosingQuoteToken";
 import JSModuleImportIdentifierCollection from "../../../../collections/module/import/identifier/JSModuleImportIdentifierCollection";
@@ -6,7 +7,7 @@ import JSModuleImportIdentifierCollection from "../../../../collections/module/i
 export default class JSModuleImportIdentifiersPattern extends AbstractParserPattern
 {
     openingQuote = undefined as JSDataObjectOpeningQuoteToken | undefined;
-    values = undefined as JSModuleImportIdentifierCollection | undefined;
+    values = undefined as JSModuleImportIdentifierCollection | JSModuleImportIdentifierPattern | undefined;
     closingQuote = undefined as JSDataObjectClosingQuoteToken | undefined;
 
     properties = () => [
@@ -26,7 +27,9 @@ export default class JSModuleImportIdentifiersPattern extends AbstractParserPatt
         }, {
             name: 'values',
             required: true,
-            element: JSModuleImportIdentifierCollection,
+            element: () => this.openingQuote === undefined
+                ? JSModuleImportIdentifierPattern
+                : JSModuleImportIdentifierCollection,
         }, {
             skip: /[\s]/,
             required: false,

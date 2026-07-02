@@ -1,11 +1,11 @@
 import AbstractParserToken from "../../../../../../../abstracts/AbstractParserToken";
 
-export default class JSModuleImportFromKeywordToken extends AbstractParserToken
+export default class JSDataFunctionArrowKeywordToken extends AbstractParserToken
 {
     rules = () => ({
         start: () => true,
         final: () => false,
         symbol: () => true,
-        lexeme: () => 'from',
+        lexeme: () => '=>',
     });
 };

@@ -32,13 +32,7 @@ var content =
 
 content = `
     <script>
-        import { lol } from 'kek';
-
-        while (true) {
-            2+3;
-        };
-
-        const t = 'poxui';;
+        const fn = (number) => { number * 4 };
     </script>
 `;
 
