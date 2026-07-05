@@ -32,7 +32,16 @@ var content =
 
 content = `
     <script>
-        const fn = (number) => { number * 4 };
+
+        if (true) {
+            const fn = (number) => { number * 4 };
+        } else if (false) {
+            if (4+6) {
+                const d= 3;
+            }
+        } else {
+            
+        }
     </script>
 `;
 

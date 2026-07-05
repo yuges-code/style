@@ -3,34 +3,124 @@
     {
       "children": [
         {
-          "name": {
-            "lexeme": "fn"
-          },
           "keyword": {
-            "lexeme": "const"
+            "lexeme": "if"
           },
-          "operator": {
-            "lexeme": "="
+          "condition": {
+            "openingQuote": {
+              "lexeme": "("
+            },
+            "expression": {
+              "left": {
+                "data": {
+                  "value": {
+                    "lexeme": "true"
+                  }
+                }
+              }
+            },
+            "closingQuote": {
+              "lexeme": ")"
+            }
           },
-          "expression": {
-            "left": {
-              "arguments": {
+          "body": {
+            "openingQuote": {
+              "lexeme": "{"
+            },
+            "instructions": [
+              {
+                "name": {
+                  "lexeme": "fn"
+                },
+                "keyword": {
+                  "lexeme": "const"
+                },
+                "operator": {
+                  "lexeme": "="
+                },
+                "expression": {
+                  "left": {
+                    "arguments": {
+                      "openingQuote": {
+                        "lexeme": "("
+                      },
+                      "values": [
+                        {
+                          "identifier": {
+                            "lexeme": "number"
+                          }
+                        }
+                      ],
+                      "closingQuote": {
+                        "lexeme": ")"
+                      }
+                    },
+                    "keyword": {
+                      "lexeme": "=>"
+                    },
+                    "body": {
+                      "openingQuote": {
+                        "lexeme": "{"
+                      },
+                      "instructions": [
+                        {
+                          "left": {
+                            "identifier": {
+                              "lexeme": "number"
+                            }
+                          },
+                          "operator": {
+                            "operator": {
+                              "lexeme": "*"
+                            }
+                          },
+                          "right": {
+                            "left": {
+                              "data": {
+                                "integer": {
+                                  "lexeme": "4"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "closingQuote": {
+                        "lexeme": "}"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "closingQuote": {
+              "lexeme": "}"
+            }
+          },
+          "else": {
+            "keyword": {
+              "lexeme": "else"
+            },
+            "if": {
+              "keyword": {
+                "lexeme": "if"
+              },
+              "condition": {
                 "openingQuote": {
                   "lexeme": "("
                 },
-                "values": [
-                  {
-                    "identifier": {
-                      "lexeme": "number"
+                "expression": {
+                  "left": {
+                    "data": {
+                      "value": {
+                        "lexeme": "false"
+                      }
                     }
                   }
-                ],
+                },
                 "closingQuote": {
                   "lexeme": ")"
                 }
-              },
-              "keyword": {
-                "lexeme": "=>"
               },
               "body": {
                 "openingQuote": {
@@ -38,29 +128,88 @@
                 },
                 "instructions": [
                   {
-                    "left": {
-                      "identifier": {
-                        "lexeme": "number"
-                      }
+                    "keyword": {
+                      "lexeme": "if"
                     },
-                    "operator": {
-                      "operator": {
-                        "lexeme": "*"
-                      }
-                    },
-                    "right": {
-                      "left": {
-                        "data": {
-                          "integer": {
-                            "lexeme": "4"
+                    "condition": {
+                      "openingQuote": {
+                        "lexeme": "("
+                      },
+                      "expression": {
+                        "left": {
+                          "data": {
+                            "integer": {
+                              "lexeme": "4"
+                            }
+                          }
+                        },
+                        "operator": {
+                          "operator": {
+                            "lexeme": "+"
+                          }
+                        },
+                        "right": {
+                          "left": {
+                            "data": {
+                              "integer": {
+                                "lexeme": "6"
+                              }
+                            }
                           }
                         }
+                      },
+                      "closingQuote": {
+                        "lexeme": ")"
+                      }
+                    },
+                    "body": {
+                      "openingQuote": {
+                        "lexeme": "{"
+                      },
+                      "instructions": [
+                        {
+                          "name": {
+                            "lexeme": "d"
+                          },
+                          "keyword": {
+                            "lexeme": "const"
+                          },
+                          "operator": {
+                            "lexeme": "="
+                          },
+                          "expression": {
+                            "left": {
+                              "data": {
+                                "integer": {
+                                  "lexeme": "3"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "closingQuote": {
+                        "lexeme": "}"
                       }
                     }
                   }
                 ],
                 "closingQuote": {
                   "lexeme": "}"
+                }
+              },
+              "else": {
+                "keyword": {
+                  "lexeme": "else"
+                },
+                "body": {
+                  "openingQuote": {
+                    "lexeme": "{"
+                  },
+                  "instructions": [],
+                  "closingQuote": {
+                    "lexeme": "}"
+                  }
                 }
               }
             }
