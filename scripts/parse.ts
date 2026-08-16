@@ -1,7 +1,9 @@
 import fs from 'fs';
 // import url from 'url';
 import path from 'path';
-import parser from "../src/parser/";
+import ParserTs from '@yuges/parser-ts';
+import Config from '../src/config/Config';
+import Scanner from '../src/scanner/Scanner';
 
 // const __filename = url.fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
@@ -16,6 +18,13 @@ import parser from "../src/parser/";
 //     </section>
 //     <div></div>
 // `;
+
+const config = new Config();
+const scanner = new Scanner(config);
+
+console.log(scanner.scan());
+
+process.exit();
 
 var content =
 `
@@ -45,7 +54,7 @@ content = `
     </script>
 `;
 
-const parsed = parser.parse(content, 'html');
+const parsed = ParserTs.parse(content, 'html');
 
 console.log(parsed.root.children);
 

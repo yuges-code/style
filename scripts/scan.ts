@@ -19,7 +19,7 @@ const config = fs.existsSync(paths.config)
 
 
 function scan() {
-    const { content = [], ignore = [], safelist = [] } = config;
+    const { content = [], ignore = [] } = config;
 
     const files = fg.sync(content, { absolute: true, ignore: ignore });
 
@@ -32,19 +32,6 @@ function scan() {
         extractor.extract(content, type).forEach(cls => foundClasses.add(cls));
     }
 
-    for (const item of safelist) {
-        if (item instanceof RegExp) {
-            // Регулярку сложно "добавить" в Set, поэтому либо генерируем все возможные классы,
-            // либо оставляем для этапа генерации CSS (см. ниже)
-            // Для простоты пока сохраним regex в отдельный массив
-            if (!config._regexSafelist) config._regexSafelist = [];
-            config._regexSafelist.push(item);
-        } else {
-            foundClasses.add(item);
-        }
-    }
-
-    return { classes: foundClasses, regexSafelist: config._regexSafelist || [] };
 }
 
 scan();

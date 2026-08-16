@@ -7,9 +7,6 @@
             "lexeme": "if"
           },
           "condition": {
-            "openingQuote": {
-              "lexeme": "("
-            },
             "expression": {
               "left": {
                 "data": {
@@ -17,16 +14,19 @@
                     "lexeme": "true"
                   }
                 }
-              }
+              },
+              "bracket": {}
             },
-            "closingQuote": {
-              "lexeme": ")"
+            "bracket": {
+              "open": {
+                "lexeme": "("
+              },
+              "close": {
+                "lexeme": ")"
+              }
             }
           },
           "body": {
-            "openingQuote": {
-              "lexeme": "{"
-            },
             "instructions": [
               {
                 "name": {
@@ -41,9 +41,6 @@
                 "expression": {
                   "left": {
                     "arguments": {
-                      "openingQuote": {
-                        "lexeme": "("
-                      },
                       "values": [
                         {
                           "identifier": {
@@ -51,17 +48,19 @@
                           }
                         }
                       ],
-                      "closingQuote": {
-                        "lexeme": ")"
+                      "bracket": {
+                        "open": {
+                          "lexeme": "("
+                        },
+                        "close": {
+                          "lexeme": ")"
+                        }
                       }
                     },
                     "keyword": {
                       "lexeme": "=>"
                     },
                     "body": {
-                      "openingQuote": {
-                        "lexeme": "{"
-                      },
                       "instructions": [
                         {
                           "left": {
@@ -81,20 +80,33 @@
                                   "lexeme": "4"
                                 }
                               }
-                            }
-                          }
+                            },
+                            "bracket": {}
+                          },
+                          "bracket": {}
                         }
                       ],
-                      "closingQuote": {
-                        "lexeme": "}"
+                      "bracket": {
+                        "open": {
+                          "lexeme": "{"
+                        },
+                        "close": {
+                          "lexeme": "}"
+                        }
                       }
                     }
-                  }
+                  },
+                  "bracket": {}
                 }
               }
             ],
-            "closingQuote": {
-              "lexeme": "}"
+            "bracket": {
+              "open": {
+                "lexeme": "{"
+              },
+              "close": {
+                "lexeme": "}"
+              }
             }
           },
           "else": {
@@ -106,9 +118,6 @@
                 "lexeme": "if"
               },
               "condition": {
-                "openingQuote": {
-                  "lexeme": "("
-                },
                 "expression": {
                   "left": {
                     "data": {
@@ -116,25 +125,25 @@
                         "lexeme": "false"
                       }
                     }
-                  }
+                  },
+                  "bracket": {}
                 },
-                "closingQuote": {
-                  "lexeme": ")"
+                "bracket": {
+                  "open": {
+                    "lexeme": "("
+                  },
+                  "close": {
+                    "lexeme": ")"
+                  }
                 }
               },
               "body": {
-                "openingQuote": {
-                  "lexeme": "{"
-                },
                 "instructions": [
                   {
                     "keyword": {
                       "lexeme": "if"
                     },
                     "condition": {
-                      "openingQuote": {
-                        "lexeme": "("
-                      },
                       "expression": {
                         "left": {
                           "data": {
@@ -155,17 +164,21 @@
                                 "lexeme": "6"
                               }
                             }
-                          }
-                        }
+                          },
+                          "bracket": {}
+                        },
+                        "bracket": {}
                       },
-                      "closingQuote": {
-                        "lexeme": ")"
+                      "bracket": {
+                        "open": {
+                          "lexeme": "("
+                        },
+                        "close": {
+                          "lexeme": ")"
+                        }
                       }
                     },
                     "body": {
-                      "openingQuote": {
-                        "lexeme": "{"
-                      },
                       "instructions": [
                         {
                           "name": {
@@ -184,18 +197,29 @@
                                   "lexeme": "3"
                                 }
                               }
-                            }
+                            },
+                            "bracket": {}
                           }
                         }
                       ],
-                      "closingQuote": {
-                        "lexeme": "}"
+                      "bracket": {
+                        "open": {
+                          "lexeme": "{"
+                        },
+                        "close": {
+                          "lexeme": "}"
+                        }
                       }
                     }
                   }
                 ],
-                "closingQuote": {
-                  "lexeme": "}"
+                "bracket": {
+                  "open": {
+                    "lexeme": "{"
+                  },
+                  "close": {
+                    "lexeme": "}"
+                  }
                 }
               },
               "else": {
@@ -203,12 +227,14 @@
                   "lexeme": "else"
                 },
                 "body": {
-                  "openingQuote": {
-                    "lexeme": "{"
-                  },
                   "instructions": [],
-                  "closingQuote": {
-                    "lexeme": "}"
+                  "bracket": {
+                    "open": {
+                      "lexeme": "{"
+                    },
+                    "close": {
+                      "lexeme": "}"
+                    }
                   }
                 }
               }

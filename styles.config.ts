@@ -1,6 +1,8 @@
+import type { StylesConfig } from "./src/types/StylesConfig";
+
 export default {
-    content: [
-        './**/*.{html,js,jsx,ts,tsx,vue}',
+    source: [
+        './**/*.{vue,html,js,ts}',
 
         '!**/node_modules/!(@yuges)/**',
         '!**/node_modules/@yuges/!(vue-ui)/**',
@@ -18,8 +20,8 @@ export default {
         // '**/node_modules/**',
     ],
       // Настройки темы (дизайн-токены)
-    theme: {
-        colors: { /* ... */ },
-        spacing: { /* ... */ }
-    }
-};
+    // theme: {
+    //     colors: { /* ... */ },
+    //     spacing: { /* ... */ }
+    // }
+} satisfies StylesConfig;

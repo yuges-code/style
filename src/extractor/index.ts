@@ -1,11 +1,11 @@
-import parser from "../parser";
+import ParserTs from "@yuges/parser-ts";
 
 function extract(content: string, type: string) {
     const classes = new Set();
 
-    const parsed = parser.parse(content, type as any)
+    const parsed = ParserTs.parse(content, type as any)
 
-    if (parsed.length) {
+    if (parsed.root) {
         console.log(parsed);
     }
 
